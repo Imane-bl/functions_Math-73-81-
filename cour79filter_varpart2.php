@@ -1,0 +1,48 @@
+<?php
+
+  /*
+    Filter Functions
+
+    - filter_var(Value[Required], Filter[Optional], Options[Optional])
+    --- Validate Filters
+
+    ------ FILTER_VALIDATE_EMAIL
+    ---------- Flag => FILTER_NULL_ON_FAILURE
+
+    ------ FILTER_VALIDATE_INT
+    ---------- Flag => FILTER_NULL_ON_FAILURE
+    ---------- Options => min_range
+    ---------- Options => max_range
+    ---------- Convert To Int On Success
+
+    ------ FILTER_VALIDATE_FLOAT
+    ---------- Flag => FILTER_NULL_ON_FAILURE
+    ---------- Options => min_range
+    ---------- Options => max_range
+    ---------- Convert To Float On Success
+  */
+
+  $email = "o@nn.sa";
+
+  var_dump(filter_var($email, FILTER_VALIDATE_EMAIL, FILTER_NULL_ON_FAILURE));
+
+  echo "<br>"; //string(7)"o@nn.sa"
+
+  $int = "90"; //sonc soit int soit string va nous donne int jes ais le type de donnees 
+
+  var_dump(filter_var(
+    $int,
+    FILTER_VALIDATE_INT,
+    ["flags" => FILTER_NULL_ON_FAILURE, "options" => ["min_range" => 50, "max_range" => 100]]
+  ));
+
+  //90.00 ---> int(90)
+  echo "<br>";//int(90) 
+
+  $float = "90.50";
+
+  var_dump(filter_var(
+    $float,
+    FILTER_VALIDATE_FLOAT,
+    ["flags" => FILTER_NULL_ON_FAILURE, "options" => ["min_range" => 50, "max_range" => 100]]
+  )); //float(90?5)

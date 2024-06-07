@@ -20,8 +20,9 @@
   echo filter_id("int") . "<br>"; // 257
 
   $val = "on"; // True || 1 || "yes" || "on"
+  //"3" thus is false 
 
-  if (filter_var($val, FILTER_VALIDATE_BOOL)) { // Or ID "258"
+  if (filter_var($val, FILTER_VALIDATE_BOOL)) { // Or ID "258" in play of FILTER8VALIDATE_BOOL
 
     echo "This Is True";
 
