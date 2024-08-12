@@ -16,7 +16,7 @@
     --- fmod vs %
 
 
-     77 Filter Functions
+     77################## Filter Functions
 
     - filter_list()
     --- Returns A List Of All Supported Filters
@@ -26,7 +26,7 @@
     - filter_var(Value[Required], Filter[Optional], Options[Optional])
     --- Filters A Variable With A Specified Filter
 
-    78 Filter Functions
+    78 ##########Filter Functions
 
     - filter_var(Value[Required], Filter[Optional], Options[Optional])
     --- Validate Filters
